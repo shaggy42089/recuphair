@@ -1,0 +1,27 @@
+<app>
+    <navbar change="{changeProp}">
+    </navbar>
+    <div class="">
+        <initiative if="{this.state.doing==='initiative'}"></initiative>
+        <equipe if="{this.state.doing==='equipe'}"></equipe>
+        <contact if="{this.state.doing==='contact'}"></contact>
+        <partenaires if="{this.state.doing==='partenaires'}"></partenaires>
+        <evenements if="{this.state.doing==='evenements'}"></evenements>
+    </div>
+
+    <foot class="footer mt-auto">
+    </foot>
+
+    <script>
+        export default {
+            state : {
+                "doing" : 'initiative'
+            },
+
+            changeProp(prop, val){
+                this.state[prop] = val;
+                this.update(this.state);
+            }
+        }
+    </script>
+</app>

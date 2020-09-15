@@ -1,0 +1,24 @@
+<card>
+    <div class="card">
+        <img class="card-img-top" src="https://picsum.photos/200/150/?random"/>
+        <div class="card-block p-2">
+            <h4 class="card-title">{props.name}</h4>
+            <a href="{ this.maps+this.clean(props.adress) }">
+                <div class="card-text">{props.adress}
+                </div>
+            </a>
+        </div>
+        <div class="card-footer">
+            <span class="float-right">{'Joined in ' + props.joinDate}</span>
+            <span><i class=""></i>{props.comments===null?'0':props.comments} avis</span>
+        </div>
+    </div>
+    <script>
+        export default {
+            maps: "https://www.google.fr/maps/search/",
+            clean(string) {
+                return string.replace(" ", "+");
+            }
+        }
+    </script>
+</card>
